@@ -5,13 +5,12 @@ const nodemailer = require('nodemailer');
 
 const app = express();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 
 // Middleware
-app.use(cors({
-  origin: "https://www.modioverseasadvisors.in/"   // <-- yaha apna actual domain daalna
-}));
+app.use(cors());
+
 app.use(bodyParser.json());
 
 
