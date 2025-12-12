@@ -178,3 +178,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+import path from "path";
+import express from "express";
+
+const app = express();
+const __dirname = path.resolve();
+
+app.use(express.static(path.join(__dirname, "frontend")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "index.html"));
+});
+
+app.listen(5000, () => {
+  console.log("Server running");
+});
